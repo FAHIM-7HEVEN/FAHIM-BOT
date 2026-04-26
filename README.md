@@ -161,10 +161,10 @@ ___
 
 ## 👨‍💻 ABOUT THE DEVELOPER
 
-**Name:** `SHAHADAT ISLAM`  
-**Nice Name:** `SA HU`  
+**Name:** `FAHIM AHMED RAJ`  
+**Nice Name:** `F4HIM`  
 **Profession:** `STUDENT & CHATBOT DEVELOPER`  
-**Location:** `KHAGRACHARI, BANGLADESH`
+**Location:** `DHAKA, BANGLADESH`
 
 #### 📞 CONTACT
 - **WhatsApp:** [WhatsApp Me](https://wa.me/+8801771240377)
