@@ -22,22 +22,22 @@ module.exports.run = async function({ api, event }) {
 ┌───────────────⭓
 │ 𝗢𝗪𝗡𝗘𝗥 𝗗𝗘𝗧𝗔𝗜𝗟𝗦
 ├───────────────
-│ 👤 𝐍𝐚𝐦𝐞 : 𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐈𝐬𝐥𝐚𝐦
+│ 👤 𝐍𝐚𝐦𝐞 : 𝐅𝐚𝐡𝐢𝐦 𝐀𝐡𝐦𝐞𝐝
 │ 🚹 𝐆𝐞𝐧𝐝𝐞𝐫 : 𝐌𝐚𝐥𝐞
 │ ❤️ 𝐑𝐞𝐥𝐚𝐭𝐢𝐨𝐧 : 𝐒𝐢𝐧𝐠𝐥𝐞
-│ 🎂 𝐀𝐠𝐞 : 𝟏𝟖+
+│ 🎂 𝐀𝐠𝐞 : 𝟏7+
 │ 🕌 𝐑𝐞𝐥𝐢𝐠𝐢𝐨𝐧 : 𝐈𝐬𝐥𝐚𝐦
 │ 🎓 𝐄𝐝𝐮𝐜𝐚𝐭𝐢𝐨𝐧 : 𝐇𝐒𝐂 (𝟐𝟎𝟐𝟔)
-│ 🏡 𝐀𝐝𝐝𝐫𝐞𝐬𝐬 : 𝐊𝐡𝐚𝐠𝐫𝐚𝐜𝐡𝐡𝐚𝐫𝐢
+│ 🏡 𝐀𝐝𝐝𝐫𝐞𝐬𝐬 : 𝐃𝐡𝐚𝐤𝐚
 └───────────────⭓
 
 ┌───────────────⭓
 │ 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 𝗟𝗜𝗡𝗞𝗦
 ├───────────────
 │ 📘 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸:
-│ https://fb.com/100001039692046
+│ https://fb.com/61552217656504
 │ 💬 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽:
-│ https://wa.me/01882333052
+│ https://wa.me/01771240377
 └───────────────⭓
 
 ┌───────────────⭓
@@ -49,7 +49,10 @@ module.exports.run = async function({ api, event }) {
  attachment: fs.createReadStream(__dirname + "/cache/owner.jpg")
  }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/owner.jpg"));
 
- return request("https://i.imgur.com/idyXtoO.jpeg")
+ return request("https://i.imgur.com/THIdtkg.jpeg", "https://i.imgur.com/bSSfaWf.jpeg", "https://i.imgur.com/R0LMmWi.jpeg", "https://i.imgur.com/8f4rw8j.jpeg",
+"https://i.imgur.com/UVjgul5.jpeg",
+"https://i.imgur.com/9NHuguc.jpeg",
+"https://i.imgur.com/THIdtkg.jpeg",)
  .pipe(fs.createWriteStream(__dirname + '/cache/owner.jpg'))
  .on('close', () => callback());
 };
