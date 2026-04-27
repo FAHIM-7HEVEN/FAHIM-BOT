@@ -4,8 +4,8 @@
   "language": "en",
   "DeveloperMode": false,
   "autoCreateDB": true,
-  "autoClean": true,
-  "allowInbox": false,
+  "autoClean": false,
+  "allowInbox": true,
   "notiGroup": true,
   "NOTIFICATION": true,
   "EMAIL": "your email",
@@ -45,14 +45,14 @@
     "cacheMessages": true,
     "optimizeEvents": true,
     "lazyLoadModules": true,
-    "limitConcurrentRequests": 5,
+    "limitConcurrentRequests": 10,
     "autoOptimizeOnError": true,
     "clearCacheOnCrash": true
   },
 
   "AntiAbuse": {
     "blockSpam": true,
-    "spamThreshold": 5,
+    "spamThreshold": 10,
     "autoBanSpam": true,
     "protectAdmin": true,
     "protectBot": true,
