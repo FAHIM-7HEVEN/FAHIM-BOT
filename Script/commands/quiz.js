@@ -1,30 +1,4 @@
-const axios = require("axios");
-
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-
-const CONFIG_URL = "https://raw.githubusercontent.com/shahadat-sahu/SAHU-API/refs/heads/main/SAHU-API.json";
-
-module.exports.config = {
-  name: "quiz",
-  version: "1.0.0",
-  hasPermssion: 0,
-  credits: "SHAHADAT SAHU",
-  description: "Quiz with 30s timer",
-  commandCategory: "Game",
-  usages: "quiz",
-  cooldowns: 0,
-  usePrefix: true
-};
-
-const TIME_LIMIT = 30000;
-let QUIZ_API = null;
-
-async function loadQuizAPI() {
-  try {
-    if (QUIZ_API) return QUIZ_API;
-    const res = await axios.get(CONFIG_URL);
-    QUIZ_API = res.data.quize.replace(/\/$/, "");
-    return QUIZ_API;
+return QUIZ_API;
   } catch {
     return null;
   }
@@ -36,7 +10,7 @@ module.exports.run = async function ({ api, event }) {
 
   try {
     const quizAPI = await loadQuizAPI();
-    if (!quizAPI) return api.sendMessage("Quiz API error call boss SAHU✔️", threadID, messageID);
+    if (!quizAPI) return api.sendMessage("Quiz API error call boss FAHIM✔️", threadID, messageID);
 
     const res = await axios.get(quizAPI + "/quiz");
     const data = res.data;
@@ -87,39 +61,8 @@ module.exports.run = async function ({ api, event }) {
     }, messageID);
 
   } catch {
-    api.sendMessage("Quiz API error call boss SAHU✔", threadID, messageID);
+    api.sendMessage("Quiz API error call boss FAHIM✔", threadID, messageID);
   }
 };
 
-module.exports.handleReply = async function ({ api, event, handleReply }) {
-  const { threadID, body, messageID } = event;
-
-  const ans = body.trim().toUpperCase();
-  if (!["A", "B", "C", "D"].includes(ans)) return;
-
-  handleReply.answered = true;
-  clearTimeout(handleReply.timeout);
-
-  try {
-    const quizAPI = await loadQuizAPI();
-
-    const res = await axios.post(quizAPI + "/quiz/answer", {
-      sessionID: handleReply.sessionID,
-      answer: ans
-    });
-
-    if (res.data.correct === true) {
-      api.sendMessage(`✅ Correct! (${res.data.answer})`, threadID, messageID);
-    } else {
-      api.sendMessage(`❌ Wrong!\nCorrect: ${res.data.answer}`, threadID, messageID);
-    }
-
-    await api.unsendMessage(handleReply.messageID);
-
-  } catch {
-    api.sendMessage("❌ Failed to check answer", threadID, messageID);
-  }
-
-  const i = global.client.handleReply.findIndex(e => e.messageID === handleReply.messageID);
-  if (i !== -1) global.client.handleReply.splice(i, 1);
-};
+module.exports.handleReply = async function ({ api, event, handle
